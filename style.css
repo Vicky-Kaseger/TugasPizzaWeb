@@ -1,4 +1,6 @@
-body {
+/* LOGIN PAGE */
+
+.loginpage {
     font-family: Arial, sans-serif;
     background-color: #a3c686;
     margin: 0;
@@ -11,7 +13,7 @@ body {
     height: 100vh;
 }
 
-.menu {
+.populardeals {
     background-color: #74A426;
     width: 50%;
     display: flex;
@@ -19,11 +21,11 @@ body {
     align-items: center;
     justify-content: center;
     padding: 20px;
-    overflow-y: auto; /* Allows only the menu section to scroll */
+    overflow-y: auto; /* Allows only the populardeals section to scroll */
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1); /* Adds inner shadow for aesthetic */
 }
 
-.menu-item {
+.populardeals-item {
     margin: 20px 0;
     text-align: center;
     background: #D2E77F;
@@ -33,13 +35,13 @@ body {
     width: 50%; /* Adjust the width to fit nicely within the container */
 }
 
-.menu-item img {
+.populardeals-item img {
     width: 80%;
     height: 80%;
     border-radius: 20px;
 }
 
-.menu-item h2 {
+.populardeals-item h2 {
     font-size: 24px;
     color: #6b4226;
     margin-top: 10px;
@@ -89,3 +91,112 @@ body {
 .login button:hover {
     background-color: #2d1a0e;
 }
+
+/* USER MENU PAGE */
+
+.usermenupage {
+    font-family: Arial, sans-serif;
+    background-color: #8BC34A;
+    margin: 0;
+    padding: 0;
+    color: #3E2723;
+}
+
+header {
+    background-color: #4E342E;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+header .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.welcome-banner {
+    color: #4E342E;
+    text-align: center;
+    padding: 40px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-banner .welcome-text h1 {
+    margin: 0;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.welcome-banner .welcome-text p {
+    margin-top: 10;
+    font-size: 20px;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.menu-item {
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.menu-item img {
+    border-radius: 15px;
+    width: 100%;
+    height: 60%;
+}
+
+.menu-item .details {
+    margin-top: 10px;
+}
+
+.menu-item .details h3 {
+    margin: 10px 0 5px;
+}
+
+.menu-item .details p {
+    margin: 5px 0 15px;
+    color: #4E342E;
+}
+
+.menu-item button {
+    background-color: #4E342E;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.menu-item button:hover {
+    background-color: #6D4C41;
+}
+

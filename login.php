@@ -51,26 +51,26 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         <title></title>
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
-    <body>
+    <body class="loginpage">
     <div class="container">
-        <div class="menu">
-            <div class="menu-item">
+        <div class="populardeals">
+            <div class="populardeals-item">
                 <img src="./Assets/pizza1.jpg" alt="pizza1">
                 <h2>Neapolitan Pizza</h2>
             </div>
-            <div class="menu-item">
+            <div class="populardeals-item">
                 <img src="./Assets/pizza2.jpg" alt="pizza2">
                 <h2>All-Day Lasagna</h2>
             </div>
-            <div class="menu-item">
+            <div class="populardeals-item">
                 <img src="./Assets/pizza3.jpg" alt="pizza3">
                 <h2>Another Pizza</h2>
             </div>
-            <div class="menu-item">
+            <div class="populardeals-item">
                 <img src="./Assets/pizza3.jpg" alt="pizza4">
                 <h2>Pizza Margherita</h2>
             </div>
-            <div class="menu-item">
+            <div class="populardeals-item">
                 <img src="./Assets/pizza5.jpg" alt="pizza5">
                 <h2>Pepperoni Pizza</h2>
             </div>
@@ -85,28 +85,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             </form>
         </div>
     </div>
-
-    <!-- <center>
-        <h1>Halaman Utama</h1>
-
-        <form action = "#" method = "POST">
-<div>
-            <label>username</label>
-            <input type = "text" name = "username" required>
-</div>
-
-<div>
-            <label>password</label>
-            <input type = "password" name = "password" required>
-</div>
-
-<div>
-            <input type = "submit" value = "Login">
-</div>
-
-</form>
-
-</center> -->
 
 </body>
 </html>
