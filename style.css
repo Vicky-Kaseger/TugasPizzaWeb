@@ -1,3 +1,91 @@
 body {
-    background-color: orange;
+    font-family: Arial, sans-serif;
+    background-color: #a3c686;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevents entire page from scrolling */
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.menu {
+    background-color: #74A426;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    overflow-y: auto; /* Allows only the menu section to scroll */
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1); /* Adds inner shadow for aesthetic */
+}
+
+.menu-item {
+    margin: 20px 0;
+    text-align: center;
+    background: #D2E77F;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds shadow around boxes */
+    padding: 10px;
+    width: 50%; /* Adjust the width to fit nicely within the container */
+}
+
+.menu-item img {
+    width: 80%;
+    height: 80%;
+    border-radius: 20px;
+}
+
+.menu-item h2 {
+    font-size: 24px;
+    color: #6b4226;
+    margin-top: 10px;
+}
+
+.login {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #74A426;
+    color: black;
+    padding: 20px;
+}
+
+.login h1 {
+    font-size: 28px;
+    margin-bottom: 40px;
+}
+
+.login form {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+.login input {
+    margin: 10px 0;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.login button {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #3e2311;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.login button:hover {
+    background-color: #2d1a0e;
 }

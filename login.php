@@ -52,8 +52,41 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
+    <div class="container">
+        <div class="menu">
+            <div class="menu-item">
+                <img src="./Assets/pizza1.jpg" alt="pizza1">
+                <h2>Neapolitan Pizza</h2>
+            </div>
+            <div class="menu-item">
+                <img src="./Assets/pizza2.jpg" alt="pizza2">
+                <h2>All-Day Lasagna</h2>
+            </div>
+            <div class="menu-item">
+                <img src="./Assets/pizza3.jpg" alt="pizza3">
+                <h2>Another Pizza</h2>
+            </div>
+            <div class="menu-item">
+                <img src="./Assets/pizza3.jpg" alt="pizza4">
+                <h2>Pizza Margherita</h2>
+            </div>
+            <div class="menu-item">
+                <img src="./Assets/pizza5.jpg" alt="pizza5">
+                <h2>Pepperoni Pizza</h2>
+            </div>
+        </div>
+        <div class="login">
+            <h1>LET’S GET YOU INTO PIZZA RHAPSODY!</h1>
+            
+            <form action = "#" method = "POST">
+                <input type="text" placeholder="Username" name="username">
+                <input type="password" placeholder="Password" name="password">
+                <button type="submit">LOG IN</button>
+            </form>
+        </div>
+    </div>
 
-    <center>
+    <!-- <center>
         <h1>Halaman Utama</h1>
 
         <form action = "#" method = "POST">
@@ -73,7 +106,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
 </form>
 
-</center>
+</center> -->
 
 </body>
 </html>
