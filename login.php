@@ -1,17 +1,8 @@
 <?php
 
-$host = "localhost";
-$user = "root";
-$password = "";
-$db = "db_web";
-
+include_once 'connection.php';
 session_start();
 
-
-$data = mysqli_connect($host, $user, $password, $db);
-if($data===false) {
-    die("connection error");
-}
 
 if($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST["username"];
@@ -72,6 +63,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 </div>
 
 </form>
+<?php
+    
+    echo mysqli_fetch_assoc(mysqli_query($data, "SELECT password FROM login;"))['password'];
+    
+?>
 
 </center>
 
