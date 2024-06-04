@@ -5,6 +5,8 @@ $user = "root";
 $password = "";
 $db = "db_web";
 
+session_start();
+
 
 $data = mysqli_connect($host, $user, $password, $db);
 if($data===false) {
@@ -24,10 +26,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Ini bagian yang mendeteksi user atau admin. Kalo user, mo pergi ke userhome.php. Kalo admin, mo ke adminhome.php.
     if($row["userType"] == "user") {
+        $_SESSION["username"] = $username;
         header("location:userhome.php");
     }
 
     elseif($row["userType"] == "admin") {
+        $_SESSION["username"] = $username;
         header("location:adminhome.php");
     }
 
@@ -50,7 +54,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     <body>
 
     <center>
-        <h1>Testing</h1>
+        <h1>Halaman Utama</h1>
 
         <form action = "#" method = "POST">
 <div>
