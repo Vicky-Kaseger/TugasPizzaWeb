@@ -5,6 +5,7 @@ $user = "root";
 $password = "";
 $db = "db_web";
 
+
 $data = mysqli_connect($host, $user, $password, $db);
 if($data===false) {
     die("connection error");
@@ -20,12 +21,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $row = mysqli_fetch_array($result);
 
+
+    // Ini bagian yang mendeteksi user atau admin. Kalo user, mo pergi ke userhome.php. Kalo admin, mo ke adminhome.php.
     if($row["userType"] == "user") {
-        echo "user";
+        header("location:userhome.php");
     }
 
     elseif($row["userType"] == "admin") {
-        echo "admin";
+        header("location:adminhome.php");
     }
 
     else {
@@ -36,8 +39,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
 ?>
 
-
-
+<!-- Kalo mo edit tampilan, isi di bagian HTML yang di bawah. Yang ada "<!DOCTYPE html>". -->
 
 <!DOCTYPE html>
 <html>
