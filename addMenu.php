@@ -11,6 +11,7 @@ $statusP = $_POST['statusP'];
 
 $sql = "INSERT INTO menu (nameMenu, descMenu, price, image, status)
         VALUES ('$nameP', '$descP', '$priceP', '$imageP', '$statusP');";
+        
 mysqli_query($data, $sql);
 
 
