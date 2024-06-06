@@ -57,17 +57,6 @@ if(mysqli_num_rows($result) > 0) {
                 <a> | </a>
                 <a href="deleteMenu.php?idMenu=<?php echo $row['idMenu']?>">Delete</a>
                 <br> <br>
-
-        <!-- echo 
-        "Name: " . $row['nameMenu'] . "<br>" .
-        "Description: " . $row['descMenu'] . "<br>" .
-        "Price: " . $row['price'] . "<br>" .
-        "Status: " . $row['status'] . "<br>" .
-        // Di bawah ini untuk tombol Edit dan Delete.
-        "<a href='editData.php?idMenu=" . $row['idMenu'] . "'>Edit</a>" . 
-        " | " .
-        "<a href='deleteMenu.php?idMenu=" . $row['idMenu'] . "'>Delete</a>" .
-        "<br> <br>"; -->
         <?php
     }
 } else {
