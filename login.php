@@ -7,13 +7,12 @@ $db = "db_web";
 
 session_start();
 
-
 $data = mysqli_connect($host, $user, $password, $db);
-if($data===false) {
+if ($data === false) {
     die("connection error");
 }
 
-if($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST["username"];
     $password = $_POST["password"];
 
@@ -23,68 +22,44 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $row = mysqli_fetch_array($result);
 
-
-    // Ini bagian yang mendeteksi user atau admin. Kalo user, mo pergi ke userhome.php. Kalo admin, mo ke adminhome.php.
-    if($row["userType"] == "user") {
+    if ($row["userType"] == "user") {
         $_SESSION["username"] = $username;
         header("location:userhome.php");
-    }
-
-    elseif($row["userType"] == "admin") {
+    } elseif ($row["userType"] == "admin") {
         $_SESSION["username"] = $username;
         header("location:adminhome.php");
-    }
-
-    else {
+    } else {
         echo "Username or Password Incorrect";
     }
 }
 
-
 ?>
 
-<!-- Kalo mo edit tampilan, isi di bagian HTML yang di bawah. Yang ada "<!DOCTYPE html>". -->
-
 <!DOCTYPE html>
-<html>
-    <head>
-        <title></title>
-        <link rel="stylesheet" type="text/css" href="style.css">
-    </head>
-    <body class="loginpage">
-    <div class="container">
-        <div class="populardeals">
-            <div class="populardeals-item">
-                <img src="./Assets/pizza1.jpg" alt="pizza1">
-                <h2>Neapolitan Pizza</h2>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Rhapsody - Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="loginpage">
+    <div class="login-container">
+        <div class="login-card">
+            <div class="logo">
+                <img src="./Assets/pizzalogo.png" alt="Pizza Rhapsody Logo">
             </div>
-            <div class="populardeals-item">
-                <img src="./Assets/pizza2.jpg" alt="pizza2">
-                <h2>All-Day Lasagna</h2>
-            </div>
-            <div class="populardeals-item">
-                <img src="./Assets/pizza3.jpg" alt="pizza3">
-                <h2>Another Pizza</h2>
-            </div>
-            <div class="populardeals-item">
-                <img src="./Assets/pizza3.jpg" alt="pizza4">
-                <h2>Pizza Margherita</h2>
-            </div>
-            <div class="populardeals-item">
-                <img src="./Assets/pizza5.jpg" alt="pizza5">
-                <h2>Pepperoni Pizza</h2>
-            </div>
-        </div>
-        <div class="login">
-            <h1>LET’S GET YOU INTO PIZZA RHAPSODY!</h1>
-            
-            <form action = "#" method = "POST">
-                <input type="text" placeholder="Username" name="username">
-                <input type="password" placeholder="Password" name="password">
-                <button type="submit">LOG IN</button>
+            <form action="#" method="POST">
+                <input type="text" placeholder="Username" name="username" required>
+                <input type="password" placeholder="Password" name="password" required>
+                <button type="submit">Log In</button>
             </form>
         </div>
+        <div class="popular-deals">
+            <div class="deal-item">
+                <img src="./Assets/populardeals.png" alt="Popular Deals">
+            </div>
+        </div>
     </div>
-
 </body>
 </html>

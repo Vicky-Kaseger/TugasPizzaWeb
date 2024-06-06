@@ -13,146 +13,223 @@ if(!isset($_SESSION["username"])) {
     <title>Pizza Rhapsody</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="usermenupage">
+<body class="userpage">
     <header>
-        <div class="logo">PIZZA RHAPSODY</div>
+        <div class="logo"><img src="./Assets/pizzalogo.png" alt="Pizza Logo"></div>
         <nav>
             <ul>
-                <li><a href="#">Menu</a></li>
-                <li><a href="#">Cart</a></li>
-                <li><a href="#">Status</a></li>
-                <li><a href="#">Feedback</a></li>
+                <li><a href="cart.html">Cart</a></li>
                 <li><a href="logout.php">Logout</a></li>
             </ul>
         </nav>
     </header>
     <section class="welcome-banner">
         <div class="welcome-text">
-            <h1>Welcome, <?php echo $_SESSION["username"]?> !</h1> 
+            <h1>Welcome, <?php echo $_SESSION["username"]?>!</h1> 
             <p>How can we satisfy your cravings today?</p>
         </div>
     </section>
+    <section class="filter-buttons">
+        <button onclick="filterMenu('all')">All</button>
+        <button onclick="filterMenu('food')">Foods</button>
+        <button onclick="filterMenu('drinks')">Drinks</button>
+    </section>
     <main>
-        <div class="menu-item">
-            <img src="./Assets/pizza1.jpg" alt="Pizza Vito">
-            <div class="details">
-                <h3>Pizza Vito</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore rerum voluptatem vel ad. Iure, nesciunt!</p>
-                <button>Add to cart</button>
+        <div class="menu-container">
+            <!-- Menu items -->
+            <div class="menu-item food" data-name="Pizza Vito" data-price="45000">
+                <img src="./Assets/pizza1.jpg" alt="Pizza Vito">
+                <div class="details">
+                    <h3>Pizza Vito</h3>
+                    <p>A symphony of flavors featuring tangy tomato sauce and melted mozzarella cheese, all crowned with generous slices of spicy pepperoni. </p>
+                    <p class="price">Rp. 45.000</p>
+                    <button class="add-to-cart">Add to cart</button>
+                </div>
             </div>
-        </div>
-        <div class="menu-item">
-            <img src="./Assets/pizza2.jpg" alt="Dino Lasagna">
-            <div class="details">
-                <h3>Dino Lasagna</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque aliquid quisquam vel, sed fuga sequi!</p>
-                <button>Add to cart</button>
+            <div class="menu-item food" data-name="Dino Spesialito" data-price="45000">
+                <img src="./Assets/pizza3.jpg" alt="Dino Spesialito">
+                <div class="details">
+                    <h3>Dino Spesialito</h3>
+                    <p>Our signature tomato sauce is spread over a crispy crust,  topped with creamy mozzarella cheese. Fresh basil leaves are also added for their fragrant aroma.</p>
+                    <p class="price">Rp. 45.000</p>
+                    <button class="add-to-cart">Add to cart</button>
+                </div>
             </div>
-        </div>
-        <div class="menu-item">
-            <img src="./Assets/pizza3.jpg" alt="Pizza Spesialito">
-            <div class="details">
-                <h3>Pizza Spesialito</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil corporis omnis, velit molestiae quidem laudantium.</p>
-                <button>Add to cart</button>
+            <div class="menu-item food" data-name="Jenni Favorito" data-price="43000">
+                <img src="./Assets/pizza4.jpg" alt="Jenni Favorito">
+                <div class="details">
+                    <h3>Jenni Favorito</h3>
+                    <p>Sweet, juicy pineapple chunks are scattered amongst savory slices of cooked ham. Alongside with Tangy tomato sauce and creamy mozzarella cheese.</p>
+                    <p class="price">Rp. 43.000</p>
+                    <button class="add-to-cart">Add to cart</button>
+                </div>
             </div>
-        </div>
-        <div class="menu-item">
-            <img src="./Assets/pizza4.jpg" alt="Jenni Favorito">
-            <div class="details">
-                <h3>Jenni Favorito</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil corporis omnis, velit molestiae quidem laudantium.</p>
-                <button>Add to cart</button>
+            <div class="menu-item food" data-name="Pizza Davido" data-price="42000">
+                <img src="./Assets/pizza5.jpg" alt="Pizza Davido">
+                <div class="details">
+                    <h3>Pizza Davido</h3>
+                    <p>Creamy feta cheese crumbles mingle with salty black olives and juicy red peppers. A bed of our signature tomato sauce and a sprinkle of mozzarella cheese tie.</p>
+                    <p class="price">Rp. 42.000</p>
+                    <button class="add-to-cart">Add to cart</button>
+                </div>
             </div>
-        </div>
-        <div class="menu-item">
-            <img src="./Assets/pizza5.jpg" alt="Pizza Davido">
-            <div class="details">
-                <h3>Pizza Davido</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil corporis omnis, velit molestiae quidem laudantium.</p>
-                <button>Add to cart</button>
+            <div class="menu-item food" data-name="Cheesio Pizza" data-price="40000">
+                <img src="./Assets/pizza6.jpg" alt="Cheesio Pizza">
+                <div class="details">
+                    <h3>Cheesio Pizza</h3>
+                    <p>Our classic cheese pizza is a blank canvas for your cravings. We use a tangy tomato sauce and a blend of creamy mozzarella and provolone cheeses. </p>
+                    <p class="price">Rp. 40.000</p>
+                    <button class="add-to-cart">Add to cart</button>
+                </div>
             </div>
-        </div>
-        <div class="menu-item">
-            <img src="./Assets/pizza6.jpg" alt="Cheesio Pizza">
-            <div class="details">
-                <h3>Cheesio Pizza</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil corporis omnis, velit molestiae quidem laudantium.</p>
-                <button>Add to cart</button>
+            <div class="menu-item food" data-name="Garfield Lasagna" data-price="50000">
+                <img src="./Assets/pizza2.jpg" alt="Garfield Lasagna">
+                <div class="details">
+                    <h3>Garfield Lasagna</h3>
+                    <p>Features layers of melt-in-your-mouth pasta sheets filled with a savory meat sauce. Creamy béchamel sauce covered with a melted mozzarella cheese</p>
+                    <p class="price">Rp. 50.000</p>
+                    <button class="add-to-cart">Add to cart</button>
+                </div>
             </div>
-        </div>
-        <div class="menu-item">
-            <img src="./Assets/pizza7.jpg" alt="Spaghetti Long">
-            <div class="details">
-                <h3>Spaghetti Long</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil corporis omnis, velit molestiae quidem laudantium.</p>
-                <button>Add to cart</button>
+            <div class="menu-item food" data-name="Spaghetti Long" data-price="35000">
+                <img src="./Assets/pizza7.jpg" alt="Spaghetti Long">
+                <div class="details">
+                    <h3>Spaghetti Long</h3>
+                    <p>Our spaghetti is piled with a slow-cooked sauce simmered with ground beef, vegetables, and herbs. Parmesan cheese finishes this timeless dish.</p>
+                    <p class="price">Rp. 35.000</p>
+                    <button class="add-to-cart">Add to cart</button>
+                </div>
             </div>
-        </div>
-        <div class="menu-item">
-            <img src="./Assets/pizza8.jpg" alt="Spaghetti Bakso">
-            <div class="details">
-                <h3>Spaghetti Bakso</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil corporis omnis, velit molestiae quidem laudantium.</p>
-                <button>Add to cart</button>
+            <div class="menu-item food" data-name="Spaghetti Bakso" data-price="38000">
+                <img src="./Assets/pizza8.jpg" alt="Spaghetti Bakso">
+                <div class="details">
+                    <h3>Spaghetti Bakso</h3>
+                    <p>Tender  meatballs are simmered in a rich tomato sauce and served over al dente spaghetti.  Alongside with a sprinkle of Parmesan cheese.</p>
+                    <p class="price">Rp. 38.000</p>
+                    <button class="add-to-cart">Add to cart</button>
+                </div>
             </div>
-        </div>
-        <div class="menu-item">
-            <img src="./Assets/pizza9.jpg" alt="Fetucinne Alvito">
-            <div class="details">
-                <h3>Fetucinne Alvito</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil corporis omnis, velit molestiae quidem laudantium.</p>
-                <button>Add to cart</button>
+            <div class="menu-item food" data-name="Fetucinne Alvito" data-price="36000">
+                <img src="./Assets/pizza9.jpg" alt="Fetucinne Alvito">
+                <div class="details">
+                    <h3>Fetucinne Alvito</h3>
+                    <p>Tender pasta noodles in a rich sauce. A generous amount of grated Parmesan cheese melting and creating a golden crust. Freshly parsley adds the freshness.  </p>
+                    <p class="price">Rp. 36.000</p>
+                    <button class="add-to-cart">Add to cart</button>
+                </div>
             </div>
-        </div>
-        <div class="menu-item">
-            <img src="./Assets/pizza10.jpg" alt="Katsu Fetucinne">
-            <div class="details">
-                <h3>Katsu Fetucinne</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil corporis omnis, velit molestiae quidem laudantium.</p>
-                <button>Add to cart</button>
+            <div class="menu-item food" data-name="Katsu Fetucinne" data-price="38000">
+                <img src="./Assets/pizza10.jpg" alt="Katsu Fetucinne">
+                <div class="details">
+                    <h3>Katsu Fetucinne</h3>
+                    <p>Featureing tender, shredded chicken in a creamy Alfredo sauce.  Fettuccine noodles are cooked to al dente and tossed in the flavorful sauce. </p>
+                    <p class="price">Rp. 38.000</p>
+                    <button class="add-to-cart">Add to cart</button>
+                </div>
             </div>
-        </div>
-        <div class="menu-item">
-            <img src="./Assets/pizza11.jpg" alt="Risotto Maknyuso">
-            <div class="details">
-                <h3>Risotto Maknyuso</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil corporis omnis, velit molestiae quidem laudantium.</p>
-                <button>Add to cart</button>
+            <div class="menu-item food" data-name="Risotto Maknyuso" data-price="36000">
+                <img src="./Assets/pizza11.jpg" alt="Risotto Maknyuso">
+                <div class="details">
+                    <h3>Risotto Maknyuso</h3>
+                    <p>Arborio rice in creamy perfection and folded with sauteed mushrooms, spinach, and Parmesan cheese. A touch of butter plus a fresh parsley.</p>
+                    <p class="price">Rp. 36.000</p>
+                    <button class="add-to-cart">Add to cart</button>
+                </div>
             </div>
-        </div>
-        <div class="menu-item">
-            <img src="./Assets/pizza12.jpg" alt="Chilio Risotto">
-            <div class="details">
-                <h3>Chilio Risotto</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil corporis omnis, velit molestiae quidem laudantium.</p>
-                <button>Add to cart</button>
+            <div class="menu-item food" data-name="Tomato Risotto" data-price="35000">
+                <img src="./Assets/pizza12.jpg" alt="Tomato Risotto">
+                <div class="details">
+                    <h3>Tomato Risotto</h3>
+                    <p>Arborio rice is cooked until creamy, then tossed with roasted tomatoes, fresh mozzarella, and basil plus a drizzle of balsamic glaze.</p>
+                    <p class="price">Rp. 35.000</p>
+                    <button class="add-to-cart">Add to cart</button>
+                </div>
             </div>
-        </div>
-        <div class="menu-item">
-            <img src="./Assets/pizza13.jpg" alt="Garfield Lasagna">
-            <div class="details">
-                <h3>Garfield Lasagna</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil corporis omnis, velit molestiae quidem laudantium.</p>
-                <button>Add to cart</button>
+            <div class="menu-item food" data-name="Magnifico Bottarga" data-price="30000">
+                <img src="./Assets/pizza13.jpg" alt="Magnifico Bottarga">
+                <div class="details">
+                    <h3>Magnifico Bottarga</h3>
+                    <p>A delicacy made from the eggs of mullet fish. It has a salty, umami flavor with a buttery texture. The mullet roe is grated over the top of the dish.</p>
+                    <p class="price">Rp. 30.000</p>
+                    <button class="add-to-cart">Add to cart</button>
+                </div>
             </div>
-        </div>
-        <div class="menu-item">
-            <img src="./Assets/pizza14.jpg" alt="Arancini Bulato">
-            <div class="details">
-                <h3>Arancini Bulato</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil corporis omnis, velit molestiae quidem laudantium.</p>
-                <button>Add to cart</button>
+            <div class="menu-item food" data-name="Arancini Bulato" data-price="30000">
+                <img src="./Assets/pizza14.jpg" alt="Arancini Bulato">
+                <div class="details">
+                    <h3>Arancini Bulato</h3>
+                    <p>Sicilian rice balls filled with savory ingredients and deep-fried.  The rice balls is filled with cheese, but also include meat ragu, vegetables, and mozzarella. </p>
+                    <p class="price">Rp. 30.000</p>
+                    <button class="add-to-cart">Add to cart</button>
+                </div>
             </div>
-        </div>
-        <div class="menu-item">
-            <img src="./Assets/pizza15.jpg" alt="Foccacia Redio">
-            <div class="details">
-                <h3>Foccacia Redio</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil corporis omnis, velit molestiae quidem laudantium.</p>
-                <button>Add to cart</button>
+            <div class="menu-item food" data-name="Foccacia Rossa" data-price="28000">
+                <img src="./Assets/pizza15.jpg" alt="Foccacia Rossa">
+                <div class="details">
+                    <h3>Foccacia Rossa</h3>
+                    <p>Made with a light and airy dough that is flavored with olive oil and rosemary. Then it's topped with fresh tomatoes and flaky sea salt, and baked until golden brown. </p>
+                    <p class="price">Rp. 28.000</p>
+                    <button class="add-to-cart">Add to cart</button>
+                </div>
             </div>
+            <div class="menu-item drink" data-name="Negroni" data-price="25000">
+                <img src="./Assets/drinks1.jpg" alt="Negroni">
+                <div class="details">
+                    <h3>Negroni</h3>
+                    <p>Made with equal parts gin, Campari, and sweet vermouth. Stirred together with ice and garnished with an orange peel. </p>
+                    <p class="price">Rp. 25.000</p>
+                    <button class="add-to-cart">Add to cart</button>
+                </div>
+            </div>
+            <div class="menu-item drink" data-name="Aperol Spritz" data-price="25000">
+                <img src="./Assets/drinks2.jpg" alt="Aperol Spritz">
+                <div class="details">
+                    <h3>Aperol Spritz</h3>
+                    <p>It's made with Aperol, prosecco, and soda water, and is garnished with an orange slice.</p>
+                    <p class="price">Rp. 25.000</p>
+                    <button class="add-to-cart">Add to cart</button>
+                </div>
+            </div>
+            <div class="menu-item drink" data-name="Limoncello" data-price="23000">
+                <img src="./Assets/drinks3.jpg" alt="Limoncello">
+                <div class="details">
+                    <h3>Limoncello</h3>
+                    <p>Made with limoncello, prosecco or other sparkling wine, soda water, ice and garnished with a lemon wedge.</p>
+                    <p class="price">Rp. 23.000</p>
+                    <button class="add-to-cart">Add to cart</button>
+                </div>
+            </div>
+            <div class="menu-item drink" data-name="Affogato" data-price="25000">
+                <img src="./Assets/drinks6.jpg" alt="Affogato">
+                <div class="details">
+                    <h3>Affogato</h3>
+                    <p>Affogato is made with a scoop of vanilla gelato or ice cream topped with a shot of hot espresso. </p>
+                    <p class="price">Rp. 25.000</p>
+                    <button class="add-to-cart">Add to cart</button>
+                </div>
+            </div>
+            <div class="menu-item drink" data-name="Peroni" data-price="20000">
+                <img src="./Assets/drinks4.jpg" alt="Peroni">
+                <div class="details">
+                    <h3>Peroni</h3>
+                    <p> Peroni is a crisp, refreshing lager beer with a hoppy aroma. It is brewed in Italy with Pilsner malt and Hallertau hops.</p>
+                    <p class="price">Rp. 20.000</p>
+                    <button class="add-to-cart">Add to cart</button>
+                </div>
+            </div>
+            <div class="menu-item drink" data-name="Coca-Cola" data-price="15000">
+                <img src="./Assets/drinks5.jpg" alt="Coca-Cola">
+                <div class="details">
+                    <h3>Coca-Cola</h3>
+                    <p>Your beloved, ordinary soda.</p>
+                    <br><br>
+                    <p class="price">Rp. 15.000</p>
+                    <button class="add-to-cart">Add to cart</button>
+                </div>
+            </div>
+
         </div>
     </main>
+    <script src="menu.js"></script>
 </body>
 </html>

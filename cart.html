@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Rhapsody - Cart</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="cartpage">
+    <?php
+    session_start();
+    if (!isset($_SESSION["username"])) {
+        header("location:login.php");
+    }
+    ?>
+
+    <header>
+        <div class="logo"><img src="./Assets/pizzalogo.png" alt="Pizza Logo"></div>
+        <nav>
+            <ul>
+                <li><a href="userhome.php">Menu</a></li>
+                <li><a href="logout.php">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2 class="yourcart">Your Cart</h2>
+        <div class="cart-container">
+            <div class="cart-items" id="cart-items">
+                <!-- Cart items will be populated here by JavaScript -->
+            </div>
+            <div class="cart-summary">
+                <p>Total Amount: <span id="total-amount">Rp. 0</span></p>
+                <button onclick="checkout()">Proceed to Checkout</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
