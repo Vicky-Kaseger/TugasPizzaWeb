@@ -1,3 +1,5 @@
+<!-- Ini file Koneksi. -->
+
 <?php
 $host = "localhost";
 $user = "root";

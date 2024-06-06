@@ -1,3 +1,5 @@
+<!-- Ini untuk Tampilan Pertama website -->
+
 <?php
 
 include_once 'connection.php';
