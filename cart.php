@@ -15,10 +15,10 @@ if(isset($_GET['action']) && $_GET['action'] == "delete") {
     <link rel="stylesheet" href="style.css">
     </head>
     <body>
-
-   
         <header>
+        <div class="logo"><img src="./Assets/pizzalogo.png" alt="Pizza Logo"></div>
         <nav>
+
             <ul>
                 <li><a href="userhome.php">Go Back</a></li>
             </ul>
