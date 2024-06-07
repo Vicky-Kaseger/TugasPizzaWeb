@@ -12,14 +12,22 @@ if(isset($_GET['action']) && $_GET['action'] == "delete") {
 <!DOCTYPE html>
 <html>
     <head>
+    <link rel="stylesheet" href="style.css">
     </head>
     <body>
+
+   
+        <header>
         <nav>
-        <h3>Cart</h3>
-        <a href="userhome.php"><span>Go Back</span></a>
+            <ul>
+                <li><a href="userhome.php">Go Back</a></li>
+            </ul>
         </nav>
+    </header>
+    <h3> Your Cart </h3>
         <div>
-            <table>
+            <table class="content-table">
+                <thead>
                 <tr>
                     <th>Name</th>
                     <th>Image</th>
@@ -28,12 +36,15 @@ if(isset($_GET['action']) && $_GET['action'] == "delete") {
                     <th>Total Price</th>
                     <th>Remove Item</th>
                 </tr>
+                </head>
+                <tbody>
                 <?php
                 $result = mysqli_query($data, "SELECT * FROM cart;");
                 $total = 0;
                 if(mysqli_num_rows($result)>0){
                     while($row = mysqli_fetch_array($result)) { 
                         ?>
+                        
                         <tr>
                             <td><?php echo $row['name'];?></td>
                             <td><img src="img/<?php echo $row['image'];?>" alt="Pizza Image"></td>
@@ -49,6 +60,7 @@ if(isset($_GET['action']) && $_GET['action'] == "delete") {
                 }
                 ?>
                 </tr> 
+                </body>
                 <tr></tr>
                 <tr>
                     <td></td>
@@ -57,15 +69,7 @@ if(isset($_GET['action']) && $_GET['action'] == "delete") {
                     <td>Total</td>
                     <td><?php echo number_format($total, 2);?></td>
                     <td>
-                        
-                                
                                 <br>
-
-                                <?php
-                            
-                        
-                        ?>
-
                                 <form action="addOrder.php" method="POST">
                                 <input type="hidden" name="totalO" value="<?php echo number_format($total, 2);?>">
                                 <button type="submit" name="submit">Buy Now</button>

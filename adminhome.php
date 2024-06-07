@@ -48,7 +48,7 @@ if(mysqli_num_rows($result) > 0) {
             <form action="adminhome.php?action=add&id=<?php echo $row['idMenu']; ?>" method="post">
             <div class='product'>
                 <br>
-                <img src="<?php echo $row['image'];?>" alt="Pizza Image">
+                <img src="./Assets/<?php echo $row['image'];?>" alt="Pizza Image">
                 <h4>Name: <?php echo $row['nameMenu']?></h4>
                 <h4>Desc: <?php echo $row['descMenu']?></h4>
                 <h4>Price: <?php echo $row['price']?></h4>

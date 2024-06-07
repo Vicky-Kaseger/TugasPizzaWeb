@@ -23,49 +23,52 @@ if(isset($_POST["add"])) {
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
     <title></title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="userpage">
+    <header>
+    <div class="logo"><img src="./Assets/pizzalogo.png" alt="Pizza Logo"></div>
     <nav>
-        <a href="cart.php">Cart</a>
-    <h1> This is User homepage </h1>
-    <h2> This session belongs to : </h2> <?php echo $_SESSION["username"]?>
-
-    <a href="logout.php"> LOGOUT </a>
- 
-    <br>
-    <h3> Menu: </h3>
-
- <!-- Ini untuk memperlihatkan Menu   -->
+    <ul>
+        <li><a href="cart.php">Cart</a></li>
+        <li><a href="logout.php"> LOGOUT </a></li>
+    </ul>
+</nav>
+</header>
+<section class="welcome-banner">
+        <div class="welcome-text">
+            <h1>Welcome, <?php echo $_SESSION["username"]?>!</h1> 
+            <p>How can we satisfy your cravings today?</p>
+        </div>
+    </section>
+    
+ <main>
+    <div class="menu-container">
     <?php
 $result = mysqli_query($data, "SELECT * FROM menu;");
 if(mysqli_num_rows($result) > 0) {
     while ($row = mysqli_fetch_assoc($result)) {
         ?>
-        <div class="product">
+        <div>
             <form action="userhome.php?action=add&id=<?php echo $row['idMenu']; ?>" method="post">
-            <div class='product'>
+            <div class="menu-item">
                 <br>
-                <img src="<?php echo $row['image'];?>" alt="Pizza Image">
-                <h4>Name: <?php echo $row['nameMenu']?></h4>
-                <h4>Desc: <?php echo $row['descMenu']?></h4>
-                <h4>Price: <?php echo $row['price']?></h4>
-                <h4>Status: <?php echo $row['status']?></h4>
+                <div class="details">
+                <img src="./Assets/<?php echo $row['image'];?>" alt="Pizza Image">
+                <h3><?php echo $row['nameMenu']?></h3>
+                <p><?php echo $row['descMenu']?></p>
+                <p class="price">Rp. <?php echo $row['price']?></p>
+                <h4><?php echo $row['status']?></h4>
                 <input type="text" id="quantity" name="quantity" value="1">
                 <input type="hidden" name="hidden_name" value="<?php echo $row['nameMenu'];?>">
                 <input type="hidden" name="hidden_image" value="<?php echo $row['image'];?>">
                 <input type="hidden" name="hidden_price" value="<?php echo $row['price'];?>">
-                <input type="submit" name="add" value="Add to Cart">
-            </div>
+                <input type="submit" class="add-to-cart" name="add" value="Add to Cart">
+                </div>
             </form>
         </div>
-        <!-- echo 
-        "Name: " . $row['nameMenu'] . "<br>" .
-        "Description: " . $row['descMenu'] . "<br>" .
-        "Price: " . $row['price'] . "<br>" .
-        "Status: " . $row['status'] . "<br>" . 
-        array_push($cart, mysqli_fetch_assoc(mysqli_query($data, "SELECT idMenu FROM menu WHERE idMenu = '{$row['idMenu']}'"))['idMenu']) .
-        "<br> <br>"; -->
         <?php
     }
 } else {
@@ -73,6 +76,10 @@ if(mysqli_num_rows($result) > 0) {
 }
 
     ?>
+
+
+    <br>
+    
 
 </body>
 </html>

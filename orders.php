@@ -13,18 +13,29 @@ if(isset($_GET['action']) && $_GET['action'] == "delete") {
 <!DOCTYPE html>
 <html>
 <head>
-    <nav>
-    <a href="adminhome.php"><span>Go Back</span></a>
-    </nav>
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<table>
+<header>
+    <nav>
+    <ul>
+        <li><a href="adminhome.php"><span>Go Back</span></a></li>
+        
+    </ul>
+</nav>
+</header>
+
+<table class="content-table">
+                <thead>
                 <tr>
                     <th>Name</th>
                     <th>Quantity</th>
                     <th>Total Price</th>
                     <th>Remove Item</th>
                 </tr>
+                </thead>
+                <tbody>    
                 <?php
                 $result = mysqli_query($data, "SELECT * FROM orders;");
                 $total = 0;
@@ -48,5 +59,6 @@ if(isset($_GET['action']) && $_GET['action'] == "delete") {
                     <td></td>
                     <td></td>
                     <td></td>
+                </tbody>
 </body>
 </html>
