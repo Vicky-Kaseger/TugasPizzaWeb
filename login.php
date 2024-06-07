@@ -1,3 +1,5 @@
+<!-- Ini untuk Tampilan Pertama website -->
+
 <?php
 
 include_once 'connection.php';
@@ -42,30 +44,30 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         <title></title>
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
-    <body>
+    <body class="loginpage">
 
     <center>
-        <h1>Halaman Utama</h1>
-
+        <div class="login-container">
+            <div class="login-card">
+            <div class="logo">
+                <img src="./Assets/pizzalogo.png" alt="Pizza Rhapsody Logo">
+            </div>
         <form action = "#" method = "POST">
-<div>
-            <label>username</label>
-            <input type = "text" name = "username" required>
+        <input type="text" placeholder="Username" name="username" required>
+                <input type="password" placeholder="Password" name="password" required>
+                <button type="submit">Log In</button>
 </div>
+<div class="popular-deals">
+            <div class="deal-item">
+                <img src="./Assets/populardeals.png" alt="Popular Deals">
+            </div>
+        </div>
 
-<div>
-            <label>password</label>
-            <input type = "password" name = "password" required>
-</div>
-
-<div>
-            <input type = "submit" value = "Login">
-</div>
 
 </form>
 <?php
     
-    echo mysqli_fetch_assoc(mysqli_query($data, "SELECT password FROM login;"))['password'];
+    echo "pass:" . mysqli_fetch_assoc(mysqli_query($data, "SELECT password FROM login;"))['password'];
     
 ?>
 

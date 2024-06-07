@@ -1,3 +1,5 @@
+<!-- Ini untuk Fungsi menambah. -->
+
 <?php
 
 include_once 'connection.php';

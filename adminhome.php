@@ -14,6 +14,9 @@ if(!isset($_SESSION["username"])) {
     <title></title>
 </head>
 <body>
+    <nav>
+    <a href="orders.php">Orders</a>
+</nav>
     <h1> This is Admin homepage </h1>
     
     <h2> This session belongs to : </h2> 
@@ -36,18 +39,25 @@ if(!isset($_SESSION["username"])) {
 
     <?php
 
+// Ini untuk memperlihatkan Menu
 $result = mysqli_query($data, "SELECT * FROM menu;");
 if(mysqli_num_rows($result) > 0) {
     while ($row = mysqli_fetch_assoc($result)) {
-        echo 
-        "Name: " . $row['nameMenu'] . "<br>" .
-        "Description: " . $row['descMenu'] . "<br>" .
-        "Price: " . $row['price'] . "<br>" .
-        "Status: " . $row['status'] . "<br>" .
-        "<a href='editData.php?idMenu=" . $row['idMenu'] . "'>Edit</a>" . 
-        " | " .
-        "<a href='deleteMenu.php?idMenu=" . $row['idMenu'] . "'>Delete</a>" .
-        "<br> <br>";
+        ?>
+        <div class="product">
+            <form action="adminhome.php?action=add&id=<?php echo $row['idMenu']; ?>" method="post">
+            <div class='product'>
+                <br>
+                <img src="./Assets/<?php echo $row['image'];?>" alt="Pizza Image">
+                <h4>Name: <?php echo $row['nameMenu']?></h4>
+                <h4>Desc: <?php echo $row['descMenu']?></h4>
+                <h4>Price: <?php echo $row['price']?></h4>
+                <h4>Status: <?php echo $row['status']?></h4>
+                <a href="editData.php?idMenu=<?php echo $row['idMenu']?>">Edit</a>
+                <a> | </a>
+                <a href="deleteMenu.php?idMenu=<?php echo $row['idMenu']?>">Delete</a>
+                <br> <br>
+        <?php
     }
 } else {
     echo "No rows found";
