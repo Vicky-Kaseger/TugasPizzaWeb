@@ -44,7 +44,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         <title></title>
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
-    <body class="loginpage">
+    <body>
+    
+        <div class="loginpage">
+    
 
     <center>
         <div class="login-container">
@@ -62,14 +65,40 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                 <img src="./Assets/populardeals.png" alt="Popular Deals">
             </div>
         </div>
+</div>
+
+    
+</div>
+<div class="groupintro">
+<h1>Anggota-anggota kelompok:</h1>
+
+<div class="group-container">
+        <div class="groupmate">
+            <img src="Assets/FotoStefanuKaseger.jpeg" alt="Foto Stefanus">
+            <h3>Stefanus Victory Vicky Kaseger</h3>
+            <p>220211060203</p>
+        </div>
+        <div class="groupmate">
+            <img src="Assets/FotoDavidHaniko.jpeg" alt="Foto David">
+            <h3>David Evan Efraim Haniko</h3>
+            <p>220211060212</p>
+        </div>
+        <div class="groupmate">
+            <img src="Assets/FotoJenniferLaluyan.JPG" alt="Foto Jennifer">
+            <h3>Jennifer Elisabeth Laluyan</h3>
+            <p>220211060162</p>
+        </div>
+        <div class="groupmate">
+            <img src="Assets/FotoGillardinoMananeke (2).jpeg" alt="Foto Gillardino">
+            <h3>Gillardino Mananeke</h3>
+            <p>220211060156</p>
+        </div>
+    </div>
+</div>
 
 
 </form>
-<?php
-    
-    echo "pass:" . mysqli_fetch_assoc(mysqli_query($data, "SELECT password FROM login;"))['password'];
-    
-?>
+
 
 </center>
 

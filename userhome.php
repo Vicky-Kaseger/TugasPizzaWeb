@@ -51,7 +51,7 @@ $result = mysqli_query($data, "SELECT * FROM menu;");
 if(mysqli_num_rows($result) > 0) {
     while ($row = mysqli_fetch_assoc($result)) {
         ?>
-        <div>
+        
             <form action="userhome.php?action=add&id=<?php echo $row['idMenu']; ?>" method="post">
             <div class="menu-item">
                 <br>

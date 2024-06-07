@@ -47,7 +47,7 @@ if(isset($_GET['action']) && $_GET['action'] == "delete") {
                         
                         <tr>
                             <td><?php echo $row['name'];?></td>
-                            <td><img src="img/<?php echo $row['image'];?>" alt="Pizza Image"></td>
+                            <td><img class = "imagesrc" src="./Assets/<?php echo $row['image'];?>" alt="Pizza Image"></td>
                             <td><?php echo $row['price'];?></td>
                             <td><?php echo $row['quantity'];?></td>
                             <td><?php echo $row['total'];?></td>
