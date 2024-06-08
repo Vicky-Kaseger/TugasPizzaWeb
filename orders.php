@@ -26,6 +26,11 @@ if(isset($_GET['action']) && $_GET['action'] == "delete") {
     </ul>
 </nav>
 </header>
+<div class="welcome-banner">
+        <div class="welcome-text">
+            <h1>Orders</h1>
+        </div>
+    </div>
 
 <table class="content-table">
                 <thead>

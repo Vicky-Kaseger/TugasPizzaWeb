@@ -24,7 +24,11 @@ if(isset($_GET['action']) && $_GET['action'] == "delete") {
             </ul>
         </nav>
     </header>
-    <h3> Your Cart </h3>
+    <div class="welcome-banner">
+        <div class="welcome-text">
+            <h1>Your Cart</h1>
+        </div>
+    </div>
         <div>
             <table class="content-table">
                 <thead>
