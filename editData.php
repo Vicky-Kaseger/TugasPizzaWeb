@@ -1,7 +1,7 @@
 <?php
 include_once "connection.php";
 $id = $_GET['idMenu'];
-$getData = mysqli_query($data, "SELECT * FROM Menu WHERE idMenu = $id;");
+$getData = mysqli_query($data, "SELECT * FROM menu WHERE idMenu = $id;");
 $rData = mysqli_fetch_array($getData);
 
 ?>
@@ -27,7 +27,7 @@ $rData = mysqli_fetch_array($getData);
 
 <form action="editMenu.php" method="POST">
             <div class="form-group">
-            <label for="nameP">Pizza Name</label>
+            <label for="nameP">Pizza ID</label>
             <input type="number" name="idP" value="<?php echo $rData['idMenu'] ?>" readonly>
             </div>
             <div class="form-group">
